@@ -36,6 +36,7 @@ This is a single-page React application for searching and viewing metadata about
 [ ] Review these notes
 [ ] Add other materials/resources used in development
 [ ] Edit the instructions below
+[ ] Remove unused dependencies
 
 # Getting Started with Create React App
 
