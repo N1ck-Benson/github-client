@@ -6,10 +6,10 @@ This is a single-page React application for searching and viewing metadata about
 
 #### Setup
 
-[ ] Bootstrap project with create-react-app, ts and sass
-[ ] Get a blank page, remove unnecessary files
-[ ] Sketch out a simple mobile-responsive design
-[ ] Explore API endpoints
+[x] Bootstrap project with create-react-app, ts and sass
+[x] Get a blank page, remove unnecessary files
+[x] Sketch out a simple mobile-responsive design
+[x] Explore API endpoints
 [ ] Comment requirements from API in an api.ts file
 [ ] Set out top-level components as callsites for API functions
 
@@ -34,9 +34,13 @@ This is a single-page React application for searching and viewing metadata about
 #### Wrap up
 
 [ ] Review these notes
-[ ] Add other materials/resources used in development
+[ ] Add other materials/resources used in development (insomnia collection, design sketch)
 [ ] Edit the instructions below
 [ ] Remove unused dependencies
+
+# Developer notes
+
+- The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public.
 
 # Getting Started with Create React App
 
