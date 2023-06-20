@@ -1,3 +1,42 @@
+# Github Client
+
+This is a single-page React application for searching and viewing metadata about Github repositories.
+
+## Checklist
+
+#### Setup
+
+[ ] Bootstrap project with create-react-app, ts and sass
+[ ] Get a blank page, remove unnecessary files
+[ ] Sketch out a simple mobile-responsive design
+[ ] Explore API endpoints
+[ ] Comment requirements from API in an api.ts file
+[ ] Set out top-level components as callsites for API functions
+
+#### Data
+
+[ ] Write all API functions, make type-safe and log out results
+[ ] Build context provider for components
+
+#### Basic views
+
+[ ] Build layout as per sketch, mobile-responsive
+[ ] Build search component, integrated with API functions
+[ ] ... list component, plus any item components, integrated
+[ ] ... SingleItem view, integrated
+[ ] ... Filter/sort component
+
+#### Styling
+
+[ ] Swap out elements for MaterialUI if time and where it makes sense
+[ ] Add fonts and colours, include basic dark mode with toggle
+
+#### Wrap up
+
+[ ] Review these notes
+[ ] Add other materials/resources used in development
+[ ] Edit the instructions below
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
