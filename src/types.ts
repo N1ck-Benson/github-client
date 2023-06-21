@@ -32,11 +32,13 @@ export type ErrorT = {
   message: string;
 };
 
+type SetStateT<T> = React.Dispatch<React.SetStateAction<T>>;
+
 export type ContextT = {
   singleItem: RepoT | undefined;
-  setSingleItem: React.Dispatch<React.SetStateAction<RepoT | undefined>>;
+  setSingleItem: SetStateT<RepoT | undefined>;
   list: RepoListT | undefined;
-  setList: React.Dispatch<React.SetStateAction<RepoListT | undefined>>;
+  setList: SetStateT<RepoListT | undefined>;
   page: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
+  setPage: SetStateT<number>;
 };
