@@ -1,5 +1,15 @@
-import { GetRepoListT, RepoListT, RepoT, SetDataT } from "./types";
+import {
+  GetReadmeForRepoT,
+  GetRepoListT,
+  RepoListT,
+  RepoT,
+  SetDataT,
+} from "./types";
 import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://api.github.com/repositories",
+});
 
 const searchApi = axios.create({
   baseURL: "https://api.github.com/search",
@@ -56,6 +66,24 @@ export const getRepoList: GetRepoListT = async (
     });
 
     return list;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
+};
+
+export const getReadmeForRepo: GetReadmeForRepoT = async (repoID) => {
+  type DataT = {
+    content: string;
+  };
+
+  try {
+    const response: { data: DataT & unknown } = await api.get(
+      `/${repoID}/contents/README.md?ref=master`
+    );
+    const content = response.data.content;
+    const string = window.atob(content);
+    return string;
   } catch (error) {
     console.log(error);
     return undefined;
