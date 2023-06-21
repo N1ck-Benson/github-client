@@ -1,12 +1,10 @@
 import { GetRepoListT, RepoListT, RepoT } from "./types";
 import axios from "axios";
 
-const api = axios.create({ baseURL: "https://api.github.com" });
 const searchApi = axios.create({
   baseURL: "https://api.github.com/search",
 });
 
-// getRepoList
 export const getRepoList: GetRepoListT = async (
   searchTerm = "example",
   page = 0
@@ -56,7 +54,3 @@ export const getRepoList: GetRepoListT = async (
     return null;
   }
 };
-
-// getRepoByID
-
-// getFileInRepo
