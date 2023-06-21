@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./Search.scss";
 import { Ctx } from "../CtxProvider";
 import { setData } from "../../api";
 
 function Search() {
-  const [term, setTerm] = useState<string>("");
-  const { setList, page } = useContext(Ctx);
+  const { setList, page, term, setTerm } = useContext(Ctx);
 
   const handleChange = (e: React.SyntheticEvent) => {
     const target = e.target as HTMLInputElement;

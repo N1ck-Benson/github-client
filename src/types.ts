@@ -41,4 +41,6 @@ export type ContextT = {
   setList: SetStateT<RepoListT | undefined>;
   page: number;
   setPage: SetStateT<number>;
+  term: string;
+  setTerm: SetStateT<string>;
 };

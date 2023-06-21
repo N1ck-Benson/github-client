@@ -11,6 +11,7 @@ const CtxProvider = ({ children }: Props) => {
   const [singleItem, setSingleItem] = useState<RepoT>();
   const [list, setList] = useState<RepoListT>();
   const [page, setPage] = useState<number>(1);
+  const [term, setTerm] = useState<string>("");
 
   useEffect(() => {
     console.log(list);
@@ -23,6 +24,8 @@ const CtxProvider = ({ children }: Props) => {
     setList,
     page,
     setPage,
+    term,
+    setTerm,
   };
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
