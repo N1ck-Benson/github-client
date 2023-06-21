@@ -11,19 +11,26 @@ export const getRepoList: GetRepoListT = async (
   searchTerm = "example",
   page = 0
 ) => {
-  try {
-    const response: {
-      total_count: number;
-      incomplete_results: boolean;
-      items: RepoListT;
-    } = await searchApi.get("/repositories", {
-      params: {
-        q: searchTerm,
-        page,
-      },
-    });
+  type DataT = {
+    total_count: number;
+    incomplete_results: boolean;
+    items: RepoListT;
+  };
 
-    const list: RepoListT = response.items?.map((repo) => {
+  try {
+    const response: { data: DataT & unknown } = await searchApi.get(
+      "/repositories",
+      {
+        params: {
+          q: searchTerm,
+          page,
+        },
+      }
+    );
+
+    const data = response.data;
+
+    const list: RepoListT = data.items?.map((repo) => {
       const returnable: RepoT = {
         id: repo.id,
         name: repo.name,
