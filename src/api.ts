@@ -39,6 +39,7 @@ export const getRepoList: GetRepoListT = async (
         watchers: repo.watchers,
         open_issues: repo.open_issues,
         readme: repo.readme,
+        html_url: repo.html_url,
         owner: {
           login: repo.owner.login,
           avatar_url: repo.owner.avatar_url,
