@@ -46,6 +46,13 @@
     justify-items: start;
     width: 100%;
     padding: 0 $padding-sm;
+    cursor: pointer;
+    background-color: lightcoral;
+    transition: filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
   }
 
   .pagination {
