@@ -18,6 +18,7 @@ export type RepoT = {
   watchers: number;
   open_issues: number;
   readme: string;
+  html_url: string;
 };
 
 export type ErrorT = {
