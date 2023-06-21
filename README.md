@@ -20,11 +20,12 @@ This is a single-page React application for searching and viewing metadata about
 
 #### Basic views
 
-[ ] Build layout as per sketch, mobile-responsive
+[x] Build layout as per sketch, mobile-responsive
 [ ] Build search component, integrated with API functions
 [ ] ... list component, plus any item components, integrated
 [ ] ... SingleItem view, integrated
 [ ] ... Filter/sort component
+[ ] ... nav and footer
 
 #### Styling
 

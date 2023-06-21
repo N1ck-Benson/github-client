@@ -1,3 +1,27 @@
+@import "../../styles/variables.scss";
+$nav-height: 50px;
+$footer-height: 100px;
+
 .App {
   text-align: center;
+  padding-top: calc($nav-height + $padding-sm);
+  height: calc(100vh + $footer-height);
+}
+
+nav,
+footer {
+  background-color: lightgrey;
+  width: 100vw;
+  text-align: center;
+}
+
+nav {
+  height: $nav-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  height: $footer-height;
 }
