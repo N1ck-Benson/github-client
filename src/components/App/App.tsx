@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
-import { RepoListT } from "./types";
-import { getRepoList } from "./api";
+import { RepoListT } from "../../types";
+import { getRepoList } from "../../api";
 
 function App() {
   const [list, setList] = useState<RepoListT>([]);

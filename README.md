@@ -10,13 +10,13 @@ This is a single-page React application for searching and viewing metadata about
 [x] Get a blank page, remove unnecessary files
 [x] Sketch out a simple mobile-responsive design
 [x] Explore API endpoints
-[ ] Comment requirements from API in an api.ts file
-[ ] Set out top-level components as callsites for API functions
+[x] Comment requirements from API in an api.ts file
+[x] Set out top-level components as callsites for API functions
 
 #### Data
 
-[ ] Write all API functions, make type-safe and log out results
-[ ] Build context provider for components
+[x] Write all API functions, make type-safe and log out results
+[x] Build context provider for components
 
 #### Basic views
 
@@ -41,6 +41,8 @@ This is a single-page React application for searching and viewing metadata about
 # Developer notes
 
 - The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public.
+- The api response header provides links for moving through pagination. In the time given it seems more straightforward to just specify a page based on the UI state.
+- Nice-to-have: user-friendly error handling
 
 # Getting Started with Create React App
 
