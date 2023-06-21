@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .ListView {
   margin: 0 auto;
   max-width: 768px;
@@ -5,4 +7,31 @@
   margin-top: 50px;
   background-color: lightcoral;
   border-radius: 5px;
+  min-height: calc(2 * $padding-sm);
+  max-height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+
+  &.empty::after {
+    content: "Search for some repos!";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: black;
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    align-items: center;
+    justify-items: start;
+    width: 100%;
+    padding: 0 $padding-sm;
+  }
 }
