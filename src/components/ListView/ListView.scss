@@ -2,18 +2,31 @@
 
 .ListView {
   margin: 0 auto;
+  width: 500vw;
   max-width: 768px;
   min-width: 500px;
   margin-top: 50px;
   background-color: lightcoral;
   border-radius: 5px;
   min-height: calc(2 * $padding-sm);
-  max-height: 80vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-  &.empty::after {
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+  }
+
+  .inner {
+    position: relative;
+    max-height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  &.empty > .inner::after {
     content: "Search for some repos!";
     position: absolute;
     left: 0;
@@ -33,5 +46,19 @@
     justify-items: start;
     width: 100%;
     padding: 0 $padding-sm;
+  }
+
+  .pagination {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgrey;
+    padding: 1px;
+
+    button {
+      margin: 0 10px;
+    }
   }
 }
