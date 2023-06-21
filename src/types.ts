@@ -24,3 +24,10 @@ export type RepoT = {
 export type ErrorT = {
   message: string;
 };
+
+export type ContextT =
+  | {
+      singleItem: RepoT | undefined;
+      setSingleItem: React.Dispatch<React.SetStateAction<RepoT | undefined>>;
+    }
+  | undefined;
