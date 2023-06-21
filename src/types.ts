@@ -5,10 +5,14 @@ export type SetDataT = (
   >
 ) => void;
 
+export type UseReadmeT = (singleItem: RepoT | undefined) => string | undefined;
+
 export type GetRepoListT = (
   searchTerm: string,
   page: number
 ) => Promise<RepoListT | undefined>;
+
+export type GetReadmeForRepoT = (repoID: string) => Promise<string | undefined>;
 
 export type RepoListT = (RepoT & unknown)[];
 

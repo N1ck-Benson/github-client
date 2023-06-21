@@ -1,14 +1,50 @@
+@import "../../styles/variables.scss";
+
 .SingleView {
   height: 100vh;
-  width: 50vw;
+  width: calc(50vw - $padding-sm);
   position: fixed;
   right: 0;
   top: 0;
-  border: black 3px dashed;
+  background-color: grey;
   transform: translateX(50vw);
   transition: transform 250ms ease-in-out;
+  color: white;
+  overflow-y: scroll;
 
-  &.open {
+  header {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      padding: 0px 0px 7px 15px;
+    }
+  }
+
+  .btn-close {
+    all: unset;
+    cursor: pointer;
+    font-size: 32px;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $padding-sm;
+  }
+
+  .metadata {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .readme {
+    text-align: left;
+  }
+
+  &.show {
     transform: translateX(0vw);
   }
 
