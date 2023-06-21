@@ -1,14 +1,26 @@
 .SingleView {
   height: 100vh;
-  min-width: 375px;
-  max-width: 70vw;
+  width: 50vw;
   position: fixed;
   right: 0;
   top: 0;
   border: black 3px dashed;
+  transform: translateX(50vw);
+  transition: transform 250ms ease-in-out;
+
+  &.open {
+    transform: translateX(0vw);
+  }
 
   @media screen and (max-width: 425px) {
     width: 100vw;
     max-width: unset;
+    transform: translateX(100vw);
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 70vw;
+    max-width: unset;
+    transform: translateX(70vw);
   }
 }
