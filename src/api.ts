@@ -1,9 +1,16 @@
-import { GetRepoListT, RepoListT, RepoT } from "./types";
+import { GetRepoListT, RepoListT, RepoT, SetDataT } from "./types";
 import axios from "axios";
 
 const searchApi = axios.create({
   baseURL: "https://api.github.com/search",
 });
+
+export const setData: SetDataT = async (data, setState) => {
+  const [searchTerm, page] = data;
+  const result = await getRepoList(searchTerm, page);
+  if (result !== null) setState(result);
+  else setState(undefined);
+};
 
 export const getRepoList: GetRepoListT = async (
   searchTerm = "example",
@@ -51,6 +58,6 @@ export const getRepoList: GetRepoListT = async (
     return list;
   } catch (error) {
     console.log(error);
-    return null;
+    return undefined;
   }
 };
