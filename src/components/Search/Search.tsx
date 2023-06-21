@@ -4,7 +4,7 @@ import { Ctx } from "../CtxProvider";
 import { setData } from "../../api";
 
 function Search() {
-  const { setList, page, term, setTerm } = useContext(Ctx);
+  const { setList, page, term, setTerm, setShowFilter } = useContext(Ctx);
 
   const handleChange = (e: React.SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
@@ -17,8 +17,16 @@ function Search() {
     setData([term, page], setList);
   };
 
+  const toggleFilter = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    setShowFilter(true);
+  };
+
   return (
     <form className="Search" onSubmit={handleSubmit}>
+      <button onClick={toggleFilter} aria-label="filter">
+        filter
+      </button>
       <input type="text" placeholder="search" onChange={handleChange} />
       <button type="submit">GO</button>
     </form>

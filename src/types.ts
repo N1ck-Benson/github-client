@@ -47,4 +47,6 @@ export type ContextT = {
   setPage: SetStateT<number>;
   term: string;
   setTerm: SetStateT<string>;
+  showFilter: boolean;
+  setShowFilter: SetStateT<boolean>;
 };
