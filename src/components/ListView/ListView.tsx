@@ -24,16 +24,18 @@ function ListView() {
     <div className={`ListView ${!list || list.length === 0 ? "empty" : ""}`}>
       <div className="inner">
         <table>
-          {list?.map((item, i) => (
-            <tr key={`list_item-${i}`} onClick={handleSelection}>
-              <a href={item.html_url}>link</a>
-              <p>{item.name}</p>
-              <p>{item.owner.login}</p>
-            </tr>
-          ))}
+          <tbody>
+            {list?.map((item, i) => (
+              <tr key={`list_item-${i}`} onClick={handleSelection}>
+                <a href={item.html_url}>link</a>
+                <p>{item.name}</p>
+                <p>{item.owner.login}</p>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
-      {list && list.length > PER_PAGE && (
+      {list && list.length === PER_PAGE && (
         <div className="pagination">
           {["back", page - 1, page, page + 1, "forward"].map((action) => (
             <button id={action.toString()} onClick={handlePage}>
