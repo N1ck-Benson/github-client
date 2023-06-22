@@ -2,57 +2,12 @@
 
 This is a single-page React application for searching and viewing metadata about Github repositories.
 
-## Checklist
+1. [Setup](#setup)
+2. [Development Notes](#development-notes)
 
-#### Setup
+To clone and run the repo, you can use the standard scripts provided with create-react-app:
 
-[x] Bootstrap project with create-react-app, ts and sass
-[x] Get a blank page, remove unnecessary files
-[x] Sketch out a simple mobile-responsive design
-[x] Explore API endpoints
-[x] Comment requirements from API in an api.ts file
-[x] Set out top-level components as callsites for API functions
-
-#### Data
-
-[x] Write all API functions, make type-safe and log out results
-[x] Build context provider for components
-
-#### Basic views
-
-[x] Build layout as per sketch, mobile-responsive
-[x] Build search component, integrated with API functions
-[x] ... list component, plus any item components, integrated
-[x] ... SingleItem view, integrated
-[x] ... Filter/sort component
-[ ] ... nav and footer
-
-#### Styling
-
-[ ] Swap out elements for MaterialUI if time and where it makes sense
-[ ] Add fonts and colours, include basic dark mode with toggle
-
-#### Wrap up
-
-[ ] Review these notes
-[ ] Add other materials/resources used in development (insomnia collection, design sketch)
-[ ] Edit the instructions below
-[ ] Remove unused dependencies
-
-# Developer notes
-
-- The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public.
-  - initially thought this was the case, then changed tack. Had to go back to fix
-- The api response header provides links for moving through pagination. In the time given it seems more straightforward to just specify a page based on the UI state.
-- Nice-to-have: user-friendly error handling
-- NTH: caching results pages already viewed
-- DRY up the side views with sass mixins
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Setup
 
 In the project directory, you can run:
 
@@ -94,3 +49,55 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+---
+
+# Development Notes
+
+Implementation planning:
+
+- The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public. Initially thought this was the case, then changed tack. Had to go back and fix it to the current solution.
+- The API response header provides links for moving through pagination. In the time given it seems more straightforward to just specify a page based on the UI state.
+
+Nice-to-haves:
+
+- User-friendly error handling (e.g. when no readme is found)
+- Try another branch when "master" doesn't return a readme
+- Cache results pages already viewed locally (the API may do this already server-side)
+- DRY up the side views with sass mixins
+- Add fonts and colours, include basic dark mode with toggle
+
+## Checklist (first- to last-priority)
+
+#### Setup
+
+[x] Bootstrap project with create-react-app, ts and sass
+[x] Get a blank page, remove unnecessary files
+[x] Sketch out a simple mobile-responsive design
+[x] Explore API endpoints
+[x] Comment requirements from API in an api.ts file
+[x] Set out top-level components as callsites for API functions
+
+#### Data
+
+[x] Write all API functions, make type-safe and log out results
+[x] Build context provider for components
+
+#### Basic views
+
+[x] Build layout as per sketch, mobile-responsive
+[x] Build search component, integrated with API functions
+[x] ... list component, plus any item components, integrated
+[x] ... SingleItem view, integrated
+[x] ... Filter/sort component
+[x] ... nav and footer
+
+#### Styling
+
+[x] Swap out elements for MaterialUI if time and where it makes sense
+
+#### Wrap up
+
+[x] Review these notes
+[x] Add other materials/resources used in development (insomnia collection, design sketch)
+[x] Edit the instructions below
