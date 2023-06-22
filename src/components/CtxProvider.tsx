@@ -14,10 +14,6 @@ const CtxProvider = ({ children }: Props) => {
   const [term, setTerm] = useState<string>("");
   const [showFilter, setShowFilter] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(list);
-  }, [list]);
-
   const value = {
     singleItem,
     setSingleItem,
