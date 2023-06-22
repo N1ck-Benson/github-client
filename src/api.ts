@@ -1,6 +1,8 @@
 import {
   GetReadmeForRepoT,
   GetRepoListT,
+  QueryOrder,
+  QuerySort,
   RepoListT,
   RepoT,
   SetDataT,
@@ -16,15 +18,17 @@ const searchApi = axios.create({
 });
 
 export const setData: SetDataT = async (data, setState) => {
-  const [searchTerm, page] = data;
-  const result = await getRepoList(searchTerm, page);
+  const [searchTerm, page, sort, order] = data;
+  const result = await getRepoList(searchTerm, page, sort, order);
   if (result !== null) setState(result);
   else setState(undefined);
 };
 
 export const getRepoList: GetRepoListT = async (
   searchTerm = "example",
-  page = 0
+  page = 0,
+  sort,
+  order = "desc"
 ) => {
   type DataT = {
     total_count: number;
@@ -33,14 +37,24 @@ export const getRepoList: GetRepoListT = async (
   };
 
   try {
+    const params: {
+      q: string;
+      page: number;
+      sort?: QuerySort;
+      order?: QueryOrder;
+    } = {
+      q: searchTerm,
+      page,
+    };
+
+    if (sort) {
+      params.sort = sort;
+      params.order = order;
+    }
+
     const response: { data: DataT & unknown } = await searchApi.get(
       "/repositories",
-      {
-        params: {
-          q: searchTerm,
-          page,
-        },
-      }
+      { params }
     );
 
     const data = response.data;

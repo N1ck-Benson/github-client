@@ -9,10 +9,15 @@ export type UseReadmeT = (singleItem: RepoT | undefined) => string | undefined;
 
 export type GetRepoListT = (
   searchTerm: string,
-  page: number
+  page: number,
+  sort?: QuerySort,
+  order?: QueryOrder
 ) => Promise<RepoListT | undefined>;
 
 export type GetReadmeForRepoT = (repoID: string) => Promise<string | undefined>;
+
+export type QuerySort = "stars" | "forks" | "updated" | "open-issues";
+export type QueryOrder = "asc" | "desc";
 
 export type RepoListT = (RepoT & unknown)[];
 
