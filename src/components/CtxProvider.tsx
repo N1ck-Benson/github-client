@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { ContextT, RepoListT, RepoT } from "../types";
 
 export const Ctx = createContext<ContextT>({} as ContextT);
