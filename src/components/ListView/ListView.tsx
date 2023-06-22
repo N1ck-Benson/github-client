@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./ListView.scss";
 import { Ctx } from "../CtxProvider";
-import { setData } from "../../api";
+import { PER_PAGE, setData } from "../../api";
 
 function ListView() {
   const { list, setList, page, term, setSingleItem } = useContext(Ctx);
@@ -33,7 +33,7 @@ function ListView() {
           ))}
         </table>
       </div>
-      {list && (
+      {list && list.length > PER_PAGE && (
         <div className="pagination">
           {["back", page - 1, page, page + 1, "forward"].map((action) => (
             <button id={action.toString()} onClick={handlePage}>

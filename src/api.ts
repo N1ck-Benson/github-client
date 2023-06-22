@@ -24,6 +24,8 @@ export const setData: SetDataT = async (data, setState) => {
   else setState(undefined);
 };
 
+export const PER_PAGE = 30;
+
 export const getRepoList: GetRepoListT = async (
   searchTerm = "example",
   page = 0,
@@ -40,11 +42,13 @@ export const getRepoList: GetRepoListT = async (
     const params: {
       q: string;
       page: number;
+      per_page: number;
       sort?: QuerySort;
       order?: QueryOrder;
     } = {
       q: searchTerm,
       page,
+      per_page: PER_PAGE,
     };
 
     if (sort) {
