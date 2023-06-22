@@ -10,7 +10,7 @@ $footer-height: 100px;
 
 nav,
 footer {
-  background-color: lightgrey;
+  @include backgroundColor();
   width: 100vw;
   text-align: center;
 }
@@ -18,8 +18,14 @@ footer {
 nav {
   height: $nav-height;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
+  @include border($trbl: "bottom");
+  box-shadow: grey 1px 1px 5px -1px;
+  text-align: left;
+  padding: 0 0 5px $padding-sm;
+  color: $color-black;
 }
 
 footer {

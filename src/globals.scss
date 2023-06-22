@@ -1,1 +1,27 @@
+/********** Dimensions **********/
+
 $padding-sm: 25px;
+
+/********** Colors **********/
+
+$color-black: rgba(0, 0, 0, 0.8);
+$color-white: lightgrey;
+$color-blue: hsl(240, 70%, 60%);
+
+@mixin backgroundColor($theme: "light") {
+  @if ($theme == "light") {
+    background-color: white;
+    filter: brightness(0.95);
+  }
+  @if ($theme == "dark") {
+    background-color: $color-black;
+  }
+}
+
+@mixin border($trbl: "top") {
+  @if ($trbl != "all") {
+    border-#{$trbl}: grey 1px solid;
+  } @else {
+    border: grey 1px solid;
+  }
+}

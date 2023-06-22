@@ -24,11 +24,13 @@ function Search() {
 
   return (
     <form className="Search" onSubmit={handleSubmit}>
-      <button onClick={toggleFilter} aria-label="filter">
-        filter
-      </button>
-      <input type="text" placeholder="search" onChange={handleChange} />
-      <button type="submit">GO</button>
+      <div className="inner">
+        <button onClick={toggleFilter} aria-label="filter">
+          filter
+        </button>
+        <input type="text" placeholder="search" onChange={handleChange} />
+        <button type="submit">GO</button>
+      </div>
     </form>
   );
 }
