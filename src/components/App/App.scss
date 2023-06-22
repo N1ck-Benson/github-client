@@ -30,4 +30,8 @@ nav {
 
 footer {
   height: $footer-height;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: $padding-sm;
 }

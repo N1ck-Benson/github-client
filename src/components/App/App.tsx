@@ -8,7 +8,9 @@ function App() {
         <h1>Github Search</h1>
       </nav>
       <Content />
-      <footer>footer</footer>
+      <footer>
+        <small>Built by Nick Benson 2023</small>
+      </footer>
     </div>
   );
 }
