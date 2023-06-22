@@ -3,6 +3,10 @@ import "./Filter.scss";
 import { Ctx } from "../CtxProvider";
 import { setData } from "../../api";
 import { QueryOrder, QuerySort } from "../../types";
+import Checkbox from "@mui/material/Checkbox";
+import CloseIcon from "@mui/icons-material/Close";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Button from "@mui/material/Button";
 
 function Filter() {
   const { showFilter, setShowFilter, term, page, setList } = useContext(Ctx);
@@ -19,80 +23,75 @@ function Filter() {
     if (id === "asc" || id === "desc") {
       setOrder(value);
       return;
-    } else setFilter(filter?.length ? undefined : id);
+    } else setFilter(id);
   };
 
   const handleSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
-    if (!filter) {
+    if (!filter || !term?.length) {
       setShowFilter(false);
     } else {
       setData([term, page, filter, order], setList);
+      setShowFilter(false);
     }
   };
+
+  const makeSentenceCase = (string: string) =>
+    string.slice(0, 1).toUpperCase() + string.slice(1);
 
   return (
     <div className={`Filter ${showFilter ? "show" : "hide"}`}>
       <div className="inner">
         <header>
           <button onClick={close} aria-label="close" className="btn-close">
-            ✖️
+            <CloseIcon />
           </button>
           <h1>Filters</h1>
         </header>
         <form onSubmit={handleSubmit}>
           <fieldset id="sort">
-            <label htmlFor="stars">stars</label>
-            <input
-              type="checkbox"
-              name="stars"
-              onChange={handelChange}
-              id="stars"
-            />
-            <label htmlFor="forks">forks</label>
-            <input
-              type="checkbox"
-              name="forks"
-              onChange={handelChange}
-              id="forks"
-            />
-            <label htmlFor="updated">last updated</label>
-            <input
-              type="checkbox"
-              name="updated"
-              onChange={handelChange}
-              id="updated"
-            />
-            <label htmlFor="open-issues">Open issues</label>
-            <input
-              type="checkbox"
-              name="open-issues"
-              onChange={handelChange}
-              id="open-issues"
-            />
+            <ButtonGroup variant="contained" className="filter_group">
+              {["stars", "forks", "updated", "open-issues"].map(
+                (criterion, i) => (
+                  <div className="input_wrapper" key={`criterion_${i}`}>
+                    <label htmlFor="stars">{makeSentenceCase(criterion)}</label>
+                    <Checkbox
+                      aria-label={makeSentenceCase(criterion)}
+                      name={criterion}
+                      onChange={handelChange}
+                      id={criterion}
+                      checked={filter === criterion}
+                    />
+                  </div>
+                )
+              )}
+            </ButtonGroup>
           </fieldset>
+          <br />
           <fieldset name="order" id="order">
-            <label htmlFor="asc">asc</label>
-            <input
-              type="radio"
-              name="asc"
-              id="asc"
-              value="asc"
-              onChange={handelChange}
-              checked={order === "asc"}
-            />
-            <label htmlFor="desc">desc</label>
-            <input
-              type="radio"
-              name="desc"
-              id="desc"
-              value={"desc"}
-              onChange={handelChange}
-              checked={order === "desc"}
-            />
+            <ButtonGroup variant="contained" className="order_group">
+              {["asc", "desc"].map((type, i) => (
+                <div className="input_wrapper">
+                  <label htmlFor={type}>
+                    {makeSentenceCase(type) + "ending"}
+                  </label>
+                  <input
+                    type="radio"
+                    name={type}
+                    id={type}
+                    value={type}
+                    onChange={handelChange}
+                    checked={order === type}
+                  />
+                </div>
+              ))}
+            </ButtonGroup>
           </fieldset>
-          <button type="submit">GO</button>
+          <br />
+          <Button type="submit" variant="contained">
+            Apply
+          </Button>
         </form>
       </div>
     </div>

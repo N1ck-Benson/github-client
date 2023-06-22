@@ -26,3 +26,8 @@ $color-blue: #2175d2;
     border: grey 1px solid;
   }
 }
+
+/********** Transitions **********/
+
+$transition-timing: cubic-bezier(0.25, 1, 0.5, 1);
+$transition-duration: 500ms;
