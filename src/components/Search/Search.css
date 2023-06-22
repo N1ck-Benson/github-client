@@ -1,5 +1,5 @@
-@import "../../globals.scss";
-
+/********** Dimensions **********/
+/********** Colors **********/
 .inner {
   width: 50%;
   margin: 0 auto;
@@ -13,4 +13,4 @@
   position: absolute !important;
   right: 5px;
   bottom: 0;
-}
+}/*# sourceMappingURL=Search.css.map */

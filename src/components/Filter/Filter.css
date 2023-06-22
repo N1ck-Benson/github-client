@@ -1,0 +1,40 @@
+/********** Dimensions **********/
+/********** Colors **********/
+.Filter {
+  height: 100vh;
+  width: 30vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: grey;
+  color: white;
+  transform: translateX(-30vw);
+  transition: transform 250ms ease-in-out;
+  z-index: 200;
+}
+.Filter.show {
+  transform: translateX(0vw);
+}
+.Filter .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+.Filter .btn-close {
+  all: unset;
+  cursor: pointer;
+  font-size: 32px;
+}
+.Filter header {
+  display: flex;
+  align-items: center;
+}
+.Filter header h1 {
+  padding: 0px 0px 7px 15px;
+}
+@media screen and (max-width: 425px) {
+  .Filter {
+    width: 100vw;
+  }
+}/*# sourceMappingURL=Filter.css.map */

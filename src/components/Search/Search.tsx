@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import "./Search.scss";
 import { Ctx } from "../CtxProvider";
 import { setData } from "../../api";
+import TextField from "@mui/material/TextField";
+import { IconButton, InputAdornment } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 function Search() {
   const { setList, page, term, setTerm, setShowFilter } = useContext(Ctx);
@@ -25,11 +29,36 @@ function Search() {
   return (
     <form className="Search" onSubmit={handleSubmit}>
       <div className="inner">
-        <button onClick={toggleFilter} aria-label="filter">
-          filter
-        </button>
-        <input type="text" placeholder="search" onChange={handleChange} />
-        <button type="submit">GO</button>
+        <IconButton
+          color="primary"
+          aria-label="Filter your search"
+          onClick={toggleFilter}
+          className="btn-filter"
+        >
+          <FilterAltIcon />
+        </IconButton>
+        <TextField
+          variant="filled"
+          type="search"
+          label="Find Github repos"
+          placeholder="search"
+          onChange={handleChange}
+          fullWidth={true}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <IconButton
+                  color="primary"
+                  aria-label="Start searching"
+                  type="submit"
+                >
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        {/* <button type="submit">GO</button> */}
       </div>
     </form>
   );
