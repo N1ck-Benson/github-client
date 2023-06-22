@@ -39,9 +39,8 @@ function Search() {
         </IconButton>
         <TextField
           variant="filled"
-          type="search"
-          label="Find Github repos"
-          placeholder="search"
+          type="text"
+          placeholder="Find Github repos"
           onChange={handleChange}
           fullWidth={true}
           InputProps={{

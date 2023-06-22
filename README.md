@@ -24,7 +24,7 @@ This is a single-page React application for searching and viewing metadata about
 [x] Build search component, integrated with API functions
 [x] ... list component, plus any item components, integrated
 [x] ... SingleItem view, integrated
-[ ] ... Filter/sort component
+[x] ... Filter/sort component
 [ ] ... nav and footer
 
 #### Styling
@@ -44,9 +44,6 @@ This is a single-page React application for searching and viewing metadata about
 - The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public.
   - initially thought this was the case, then changed tack. Had to go back to fix
 - The api response header provides links for moving through pagination. In the time given it seems more straightforward to just specify a page based on the UI state.
-- Choosing different methods for the forms (controlled, uncontrolled)
-  - This gives us the option to dynamically update the search bar as the user types, if we decide this would be a useful feature
-  - For the filter, dynamic responses to inputs seem unnecessary and potentially expensive / bad for UX, so let's use a straightforward form
 - Nice-to-have: user-friendly error handling
 - NTH: caching results pages already viewed
 - DRY up the side views with sass mixins
