@@ -72,7 +72,7 @@ function Filter() {
           <fieldset name="order" id="order">
             <ButtonGroup variant="contained" className="order_group">
               {["asc", "desc"].map((type, i) => (
-                <div className="input_wrapper">
+                <div className="input_wrapper" key={`${type}_${i}`}>
                   <label htmlFor={type}>
                     {makeSentenceCase(type) + "ending"}
                   </label>

@@ -3,6 +3,7 @@ import "./SingleView.scss";
 import { Ctx } from "../CtxProvider";
 import ReactMarkdown from "react-markdown";
 import { useReadme } from "../../hooks";
+import CloseIcon from "@mui/icons-material/Close";
 
 function SingleView() {
   const { singleItem, setSingleItem } = useContext(Ctx);
@@ -24,7 +25,7 @@ function SingleView() {
           <>
             <header>
               <button onClick={close} aria-label="close" className="btn-close">
-                ✖️
+                <CloseIcon />
               </button>
               <h1>{singleItem.name}</h1>
             </header>

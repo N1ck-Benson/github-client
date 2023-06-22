@@ -6,7 +6,7 @@
   max-width: 768px;
   min-width: 500px;
   margin-top: 50px;
-  background-color: lightcoral;
+  background-color: $color-blue;
   border-radius: 5px;
   min-height: calc(2 * $padding-sm);
   display: flex;
@@ -15,7 +15,8 @@
   justify-content: flex-start;
 
   @media screen and (max-width: 768px) {
-    width: 100vw;
+    width: 90vw;
+    max-width: 375px;
   }
 
   .inner {
@@ -47,7 +48,7 @@
     width: 100%;
     padding: 0 $padding-sm;
     cursor: pointer;
-    background-color: lightcoral;
+    background-color: $color-blue;
     transition: filter 150ms ease;
 
     &:hover {
