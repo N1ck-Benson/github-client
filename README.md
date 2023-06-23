@@ -73,7 +73,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - ... add fonts and colours, include basic dark mode with toggle
 - ... make use of semantic HTML where appropriate and useful for a11y, e.g. in the SingleView component
 - ... workshop some other features for our users!
-
+- ... implement testing with RTL
 ---
 
 # Development Notes
