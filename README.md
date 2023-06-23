@@ -3,7 +3,8 @@
 This is a single-page React application for searching and viewing metadata about Github repositories.
 
 1. [Setup](#setup)
-2. [Development Notes](#development-notes)
+2. [Tech Test Notes](#test-test-notes)
+3. [Development Notes](#development-notes)
 
 To clone and run the repo, you can use the standard scripts provided with create-react-app:
 
@@ -52,20 +53,35 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
+# Test Test Notes
+
+### Process and timings:
+
+- I began the task by making a checklist [see below](#checklist), which I followed more or less in order.
+- Functionality was prioritised over styling, which was left until last.
+- As can be seen from the commit logs, most of the functionality was completed inside 5 hours, with minor corrections made later.
+- After that initial time, I reviewed the brief to see where my work could be more aligned with Naimuri's preferences, and decided to implement MaterialUI.
+
+### If I had more time:
+
+- I would complete the styling of the list view, with a MaterialUI pagination component
+- ... implement user-friendly error handling (e.g. when no readme is found)
+- ... in the request for the readme, send a request for the "main" branch if the "master" is not found
+- ... check the Github API's response headers for caching. If not caching, cache results pages that have already been viewed locally
+- ... add loading states for the list view and readme view (would opt for a spinner over a skeleton)
+- ... DRY up the styling of the side views with sass mixins
+- ... add fonts and colours, include basic dark mode with toggle
+- ... make use of semantic HTML where appropriate and useful for a11y, e.g. in the SingleView component
+- ... workshop some other features for our users!
+
+---
+
 # Development Notes
 
-Implementation planning:
+API Notes:
 
 - The API will let us get everything we need without authentication. The readme requires two GET requests instead of one, but doesn't require authentication if the repo is public. Initially thought this was the case, then changed tack. Had to go back and fix it to the current solution.
 - The API response header provides links for moving through pagination. In the time given it seems more straightforward to just specify a page based on the UI state.
-
-Nice-to-haves:
-
-- User-friendly error handling (e.g. when no readme is found)
-- Try another branch when "master" doesn't return a readme
-- Cache results pages already viewed locally (the API may do this already server-side)
-- DRY up the side views with sass mixins
-- Add fonts and colours, include basic dark mode with toggle
 
 ## Checklist (first- to last-priority)
 
